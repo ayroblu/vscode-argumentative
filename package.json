@@ -10,18 +10,18 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.shiftArgLeft",
-    "onCommand:extension.shiftArgRight"
+    "onCommand:argumentative.shiftArgLeft",
+    "onCommand:argumentative.shiftArgRight"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.shiftArgLeft",
+        "command": "argumentative.shiftArgLeft",
         "title": "Shift argument to the left"
       },
       {
-        "command": "extension.shiftArgRight",
+        "command": "argumentative.shiftArgRight",
         "title": "Shift argument to the right"
       }
     ]
