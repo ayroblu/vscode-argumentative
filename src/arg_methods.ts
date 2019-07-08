@@ -96,29 +96,37 @@ type ArgumentPosition = {
   nextBreakIdx: number;
   text: string;
 };
-type AllowedOpeningBrackets = "(" | "{";
-type AllowedClosingBrackets = ")" | "}";
+type AllowedOpeningBrackets = "(" | "{" | "[" | "<";
+type AllowedClosingBrackets = ")" | "}" | "]" | ">";
 type AllowedBrackets = AllowedOpeningBrackets | AllowedClosingBrackets;
 const ALLOWED_OPENING_BRACKETS: Set<AllowedOpeningBrackets> = new Set([
   "(",
-  "{"
+  "{",
+  "[",
+  "<"
 ]);
 const ALLOWED_CLOSING_BRACKETS: Set<AllowedClosingBrackets> = new Set([
   ")",
-  "}"
+  "}",
+  "]",
+  ">"
 ]);
 const DELIMETER = ",";
 const OPENING_BRACKET_MAP: {
   [key in AllowedOpeningBrackets]: AllowedClosingBrackets
 } = {
   "(": ")",
-  "{": "}"
+  "{": "}",
+  "[": "]",
+  "<": ">"
 };
 const CLOSING_BRACKET_MAP: {
   [key in AllowedClosingBrackets]: AllowedOpeningBrackets
 } = {
   ")": "(",
-  "}": "{"
+  "}": "{",
+  "]": "[",
+  ">": "<"
 };
 function getCurrentArgPosition(
   text: string,
